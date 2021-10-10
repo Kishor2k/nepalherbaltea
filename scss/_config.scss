@@ -1,0 +1,121 @@
+$lightness-100: 100%;
+$lightness-80: 80%;
+$lightness-50:50%;
+$lightness-0:0%;
+$dark1:hsl(157, 96%, 10%);
+$dark2:hsl(150, 47%, 14%);
+$mid-clr:hsl(130, 28%, 29%);
+$light1:hsl(120, 98%, 80%);
+$light2:hsl(99, 62%, 85%);
+$border-radius:5px;
+$card-margin:30px;
+@mixin ease-in-out{
+  transition: all .3s ease-in-out;
+}
+@function set-text-color($color){
+  @if(lightness($color) > 40){
+    @return $dark1;
+  }@else{
+    @return $light2;
+  }
+}
+@mixin box-shadow($color){
+  box-shadow: 0px 4px 10px $color;
+}
+body{
+  font-family: 'Baloo 2',HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+}
+.container{
+  max-width:1120px;
+  margin-inline:auto;
+}
+h1,h2,h3{
+  font-family:'Ubuntu', sans-serif;
+}
+
+h1{
+  font-size:clamp(32px, calc(24px + 2vw), 40px);
+  color:$light1;
+  text-transform: uppercase;
+}
+h2{
+  font-size:clamp(24px, calc(20px + 1.5vw), 32px);
+  color:set-text-color($dark2);
+}
+h3{
+  color:$light1;
+  font-weight:500;
+}
+p{
+   color:$light2;
+   margin:1rem 0;
+}
+.main-para{
+  line-height:1.2;
+  font-size:24px;
+  max-width:500px;
+}
+ul{
+  list-style:none;
+}
+a{
+  text-decoration:none;
+  color:$light2;
+  font-size: 24px;
+  font-weight: 500;
+  display: inline-block;
+  @include ease-in-out;
+}
+a:hover{
+  color:$light1;
+}
+.cta{
+  font-size:18px;
+  background:$light1;
+  padding:8px 20px;
+  color:$dark2;
+  cursor:pointer;
+  text-transform: uppercase;
+  border-radius:3px;
+  box-shadow: 0px 4px 10px $dark1;
+  @include ease-in-out;
+}
+.cta-outline{
+  border:1px solid $light1;
+  outline:1px solid $light1;
+}
+.cta-outline-border{
+  border-radius:0px;
+  border:1px solid $light2;
+  outline:1px solid $light2;
+  background:transparent;
+  color:set-text-color($dark2);
+}
+.cta-outline:hover{
+  outline:1px solid $dark2;
+  outline-offset:-4px;
+  color:$dark2;
+}
+.cta-outline-border:hover{
+  outline-offset:3px;
+}
+img:not(.logo img){
+  display:block;
+  width:100%;
+}
+i{
+  font-size:.8em;
+}
+i.right{
+  margin-left:10px;
+}
+i.left{
+  margin-right:10px;
+}
+section{
+  max-width:1440px;
+  margin:0 auto;
+  padding:3rem clamp(1.3rem, calc(2rem + 2.5vw), 5rem);
+  overflow-x:hidden;
+}
+

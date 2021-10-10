@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Ubuntu:wght@400;500&display=swap');
+@import 'config.scss';
+
+*,*::before,*::after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    text-align: center;
+}
+
+// header
+header{
+    position:absolute;
+    width:100%;
+    top:0;
+    left:0;
+    padding:clamp(1.3rem, calc(.8rem + 2.5vw), 5rem);
+    @include ease-in-out;
+}
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.logo img{
+    width:60px;
+}
+.hamburger{
+    width:30px;
+    height:20px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    cursor:pointer;
+    z-index:1000;
+}
+
+.bars{
+    width:100%;
+    height:2px;
+    border-radius:$border-radius;
+    background:$light2;
+    transform-origin:center;
+    @include ease-in-out;
+}
+
+.bars.mid{
+    width:75%;
+}
+.bars.top.active{
+    transform:rotate(45deg) translate(5px, 5px);
+}
+.bars.mid.active{
+    transform: translateX(100px);
+}
+.bars.bot.active{
+    width:100%;
+    transform:rotate(-45deg) translate(9px, -7px);
+}
+.bars.bot{
+    width:50%;
+}
+
+.nav{
+    position:absolute;
+    top:0;
+    left:100%;
+    width:100%;
+    height:calc(100vh - 10vh);
+    background:$dark2;
+    padding:50px 30px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    @include ease-in-out;
+}
+.nav.active{
+    left:0;
+}
+.nav li{
+    padding:10px 0;
+    opacity:0;
+     @include ease-in-out;
+}
+.nav li a:hover{
+    transform:translateX(-10px);
+}
+.nav li.active{
+    opacity: 1;
+}
+.nav li.active:nth-child(1){
+    transition-delay:.5s;
+}
+.nav li.active:nth-child(2){
+    transition-delay:.75s;
+}
+.nav li.active:nth-child(3){
+    transition-delay:1s;
+}
+.nav li.active:nth-child(4){
+    transition-delay:1.25s;
+}
+.nav li.active:nth-child(5){
+    transition-delay:1.5s;
+}
+
+
+// hero
+.hero{
+    position: relative;
+    width:100%;
+    min-height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(to bottom, hsla(157, 96%, 10%,100%), hsla(157, 96%, 10%,70%),hsla(157, 96%, 10%,20%)), url('../images/main-bg-mobile.jpg') center/cover no-repeat;
+}
+
+// features
+.features{
+    background:$light2;
+    position: relative;
+}
+.card-wrapper{
+    margin-top: 30px;
+}
+.card{
+    width:100%;
+    background:$dark2;
+    padding:20px;
+    margin:$card-margin 0;
+    @include box-shadow(rgba(0,0,0,.3));
+    border-radius:$border-radius;
+}
+.card:hover .image{
+    transform:translateY(-5px);
+}
+.image{
+    width:50px;
+    margin-bottom: 20px;
+    margin-inline:auto;
+    @include ease-in-out;
+}
+
+// about
+.about{
+    background:$dark2;
+}
+.about-image{
+    margin-top: 30px;
+    height:300px;
+    background:url('../images/illam-tea-garden.jpg') center/cover;
+    border-radius:$border-radius;
+    position: relative;
+    z-index:2;
+}
+.about-image::before{
+    content:'';
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:105%;
+    height:105%;
+    border:2px solid $light2;
+    border-radius:7px;
+    z-index:1;
+}
+
+// products
+.products{
+    background:$mid-clr;
+    position: relative;
+    padding-bottom:0;
+    padding-left:0;
+    padding-right:0;
+}
+
+.wave{
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+.products-wrapper{
+    margin-top: 30px;
+    margin-bottom: 200px;
+}
+.product{
+    background: $dark2;
+    border-radius:$border-radius;
+    @include box-shadow(rgba(0,0,0,.4));
+}
+.product-image{
+    position: relative;
+    width:100%;
+    height:200px;
+    border-radius:$border-radius;
+    overflow: hidden;
+    cursor:pointer;
+}
+.product-image img{
+    position: absolute;
+    inset:0;
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    @include ease-in-out;
+}
+.product-image img:hover{
+    transform:scale(1.07);
+}
+.product-body{
+    padding:20px;
+}
+.products a{
+    margin-top: 20px;
+}
+
+// service
+
+.services{
+    background:$dark2;
+}
+
+.service{
+    background:$light2;
+}
+.service .image{
+    background:$dark2;
+    border-radius:50%;
+    width:80px;
+    height:80px;
+    padding:20px;
+}
+.service h3, .service p{
+    color:set-text-color($light2);
+}
+
+// contact
+.contact{
+    background:$mid-clr;
+}
+.info-side p{
+    text-align:left;
+    font-size:18px;
+}
+.info-side span{
+    margin-right:10px;
+}
+.form{
+    background:$dark2;
+    padding:20px;
+}
+.form-side{
+    width:100%;
+}
+.form-control{
+    margin: 10px 0;
+}
+.form-input{
+    width:100%;
+    padding:8px 20px;
+    font-family: 'Baloo 2';
+    border:1px solid $mid-clr;
+    font-size:16px;
+}
+.form-input:focus{
+    outline:2px solid $light1;
+}
+.form h3{
+    color:$light2;
+    text-shadow: 1px 1px 2px $mid-clr,
+                 2px 2px 3px $dark2,
+                 2px 2px 3px $light1;
+    margin-bottom:20px;
+    font-size:22px;
+}
+.social{
+    display: flex;
+}
+.social li{
+    margin:0 10px;
+}
+.social li i{
+    font-size:20px;
+    box-shadow:0px 5px 5px rgba(0,0,0,.3);
+}
+.social li a:hover {
+    transform:translateY(-5px);
+}
+
+
+@media (min-width:768px){
+    .hero{
+       background:linear-gradient(to bottom, hsla(157, 96%, 10%,80%),
+                                             hsla(157, 96%, 10%,50%),
+                                             hsla(157, 96%, 10%,0%)),
+                                              url('../images/main-bg.jpg') center/cover no-repeat;
+    }
+
+   .card{
+   margin:0px;
+   }
+   .main-title{
+    text-shadow: 2px 2px 1px $dark2,
+                 -1px -1px 1px $light2;
+   }
+    .nav{
+    position:absolute;
+    top:0;
+    left:100%;
+    width:50%;
+    height:calc(100vh - 10vh);
+    background:$dark2;
+    padding:50px 30px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    @include box-shadow(rgba(0,0,0,.8));
+    @include ease-in-out;
+}
+.nav.active{
+    left:50%;
+}
+.card-wrapper{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:30px;
+    margin-top: 40px;
+}
+.about-text p{
+    text-align: left;
+}
+
+}
+@media (min-width:900px){
+    .about .container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap:50px;
+    }
+    .about-image{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin:0;
+     
+    }
+    .about-text{
+        grid-column: 2 / 3;
+          grid-row: 1 / 2;
+    }
+
+.about-image::before{ 
+    top:40%;
+    left:45%;
+    transform:translate(-50%,-50%);
+}
+}
