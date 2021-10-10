@@ -11,7 +11,8 @@ h1, h2, h3 {
 
 h1 {
   font-size: clamp(32px, calc(24px + 2vw), 40px);
-  color: #9afe9a; }
+  color: #9afe9a;
+  text-transform: uppercase; }
 
 h2 {
   font-size: clamp(24px, calc(20px + 1.5vw), 32px);
@@ -27,7 +28,8 @@ p {
 
 .main-para {
   line-height: 1.2;
-  font-size: 18px; }
+  font-size: 24px;
+  max-width: 500px; }
 
 ul {
   list-style: none; }
@@ -88,6 +90,7 @@ i.left {
 
 section {
   max-width: 1440px;
+  margin: 0 auto;
   padding: 3rem clamp(1.3rem, calc(2rem + 2.5vw), 5rem);
   overflow-x: hidden; }
 
@@ -95,6 +98,9 @@ section {
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
+
+html {
+  scroll-behavior: smooth; }
 
 body {
   text-align: center; }
@@ -197,7 +203,7 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, rgba(1, 50, 31, 0.8), rgba(1, 50, 31, 0.5), rgba(1, 50, 31, 0)), url("../images/main-bg-mobile.jpg") center/cover no-repeat; }
+  background: linear-gradient(to bottom, #01321f, rgba(1, 50, 31, 0.7), rgba(1, 50, 31, 0.2)), url("../images/main-bg-mobile.jpg") center/cover no-repeat; }
 
 .features {
   background: #d2f0c1;
@@ -231,7 +237,8 @@ header .container {
   height: 300px;
   background: url("../images/illam-tea-garden.jpg") center/cover;
   border-radius: 5px;
-  position: relative; }
+  position: relative;
+  z-index: 2; }
 
 .about-image::before {
   content: '';
@@ -242,14 +249,26 @@ header .container {
   width: 105%;
   height: 105%;
   border: 2px solid #d2f0c1;
-  border-radius: 7px; }
+  border-radius: 7px;
+  z-index: 1; }
 
 .products {
   background: #355f3c;
-  position: relative; }
+  position: relative;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0; }
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0; }
 
 .products-wrapper {
-  margin-top: 30px; }
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 30px;
+  margin-bottom: 100px; }
 
 .product {
   background: #133424;
@@ -347,8 +366,14 @@ header .container {
   transform: translateY(-5px); }
 
 @media (min-width: 768px) {
+  .hero {
+    background: linear-gradient(to bottom, rgba(1, 50, 31, 0.8), rgba(1, 50, 31, 0.5), rgba(1, 50, 31, 0)), url("../images/main-bg.jpg") center/cover no-repeat; }
+
   .card {
     margin: 0px; }
+
+  .main-title {
+    text-shadow: 2px 2px 1px #133424, -1px -1px 1px #d2f0c1; }
 
   .nav {
     position: absolute;
@@ -371,14 +396,20 @@ header .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin-top: 40px; } }
+    margin-top: 40px; }
+
+  .products-wrapper {
+    margin-bottom: 200px; }
+
+  .about-text p {
+    text-align: left; } }
 @media (min-width: 900px) {
   .about .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 50px;
-    text-align: left; }
+    margin-top: 40px; }
 
   .about-image {
     grid-column: 1 / 2;
@@ -390,14 +421,8 @@ header .container {
     grid-row: 1 / 2; }
 
   .about-image::before {
-    content: '';
-    position: absolute;
     top: 40%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    border: 3px solid #d2f0c1;
-    border-radius: 7px; } }
+    left: 45%;
+    transform: translate(-50%, -50%); } }
 
 /*# sourceMappingURL=main.css.map */
