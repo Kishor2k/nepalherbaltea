@@ -265,8 +265,10 @@ header .container {
   left: 0; }
 
 .products-wrapper {
+  padding-left: 25px;
+  padding-right: 25px;
   margin-top: 30px;
-  margin-bottom: 200px; }
+  margin-bottom: 100px; }
 
 .product {
   background: #133424;
@@ -396,6 +398,9 @@ header .container {
     gap: 30px;
     margin-top: 40px; }
 
+  .products-wrapper {
+    margin-bottom: 200px; }
+
   .about-text p {
     text-align: left; } }
 @media (min-width: 900px) {
@@ -403,7 +408,8 @@ header .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    gap: 50px; }
+    gap: 50px;
+    margin-top: 40px; }
 
   .about-image {
     grid-column: 1 / 2;
