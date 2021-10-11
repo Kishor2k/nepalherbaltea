@@ -91,7 +91,7 @@ i.left {
 section {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 3rem clamp(1.3rem, calc(2rem + 2.5vw), 5rem);
+  padding: 3rem clamp(1rem, calc(.8rem + 2vw), 5rem);
   overflow-x: hidden; }
 
 *, *::before, *::after {
@@ -145,7 +145,7 @@ header .container {
   transform: rotate(45deg) translate(5px, 5px); }
 
 .bars.mid.active {
-  transform: translateX(100px); }
+  transform: translateX(300px); }
 
 .bars.bot.active {
   width: 100%;
@@ -159,7 +159,7 @@ header .container {
   top: 0;
   left: 100%;
   width: 100%;
-  height: calc(100vh - 10vh);
+  height: 100vh;
   background: #133424;
   padding: 50px 30px;
   display: flex;
@@ -265,8 +265,8 @@ header .container {
   left: 0; }
 
 .products-wrapper {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-top: 30px;
   margin-bottom: 100px; }
 
@@ -326,10 +326,6 @@ header .container {
 .info-side span {
   margin-right: 10px; }
 
-.form {
-  background: #133424;
-  padding: 20px; }
-
 .form-side {
   width: 100%; }
 
@@ -364,6 +360,14 @@ header .container {
 
 .social li a:hover {
   transform: translateY(-5px); }
+
+.footer {
+  background: #01321f;
+  font-size: 14px;
+  padding: 20px; }
+
+.footer a {
+  font-size: 16px; }
 
 @media (min-width: 768px) {
   .hero {

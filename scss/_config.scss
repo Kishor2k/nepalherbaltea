@@ -115,7 +115,7 @@ i.left{
 section{
   max-width:1440px;
   margin:0 auto;
-  padding:3rem clamp(1.3rem, calc(2rem + 2.5vw), 5rem);
+  padding:3rem clamp(1rem, calc(.8rem + 2vw), 5rem);
   overflow-x:hidden;
 }
 
