@@ -120,6 +120,7 @@ header .container{
     align-items: center;
     justify-content: center;
     background:linear-gradient(to bottom, hsla(157, 96%, 10%,100%), hsla(157, 96%, 10%,70%),hsla(157, 96%, 10%,20%)), url('../images/main-bg-mobile.jpg') center/cover no-repeat;
+    background-attachment:fixed;
 }
 
 // features
@@ -309,6 +310,7 @@ header .container{
                                              hsla(157, 96%, 10%,50%),
                                              hsla(157, 96%, 10%,0%)),
                                               url('../images/main-bg.jpg') center/cover no-repeat;
+        background-attachment: fixed;
     }
 
    .card{

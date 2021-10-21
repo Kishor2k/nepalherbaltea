@@ -91,7 +91,7 @@ i.left {
 section {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 3rem clamp(1.3rem, calc(2rem + 2.5vw), 5rem);
+  padding: 3rem clamp(1rem, calc(.8rem + 2vw), 5rem);
   overflow-x: hidden; }
 
 *, *::before, *::after {
@@ -145,7 +145,7 @@ header .container {
   transform: rotate(45deg) translate(5px, 5px); }
 
 .bars.mid.active {
-  transform: translateX(100px); }
+  transform: translateX(300px); }
 
 .bars.bot.active {
   width: 100%;
@@ -159,7 +159,7 @@ header .container {
   top: 0;
   left: 100%;
   width: 100%;
-  height: calc(100vh - 10vh);
+  height: 100vh;
   background: #133424;
   padding: 50px 30px;
   display: flex;
@@ -203,7 +203,8 @@ header .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #01321f, rgba(1, 50, 31, 0.7), rgba(1, 50, 31, 0.2)), url("../images/main-bg-mobile.jpg") center/cover no-repeat; }
+  background: linear-gradient(to bottom, #01321f, rgba(1, 50, 31, 0.7), rgba(1, 50, 31, 0.2)), url("../images/main-bg-mobile.jpg") center/cover no-repeat;
+  background-attachment: fixed; }
 
 .features {
   background: #d2f0c1;
@@ -326,10 +327,6 @@ header .container {
 .info-side span {
   margin-right: 10px; }
 
-.form {
-  background: #133424;
-  padding: 20px; }
-
 .form-side {
   width: 100%; }
 
@@ -364,6 +361,14 @@ header .container {
 
 .social li a:hover {
   transform: translateY(-5px); }
+
+.footer {
+  background: #01321f;
+  font-size: 14px;
+  padding: 20px; }
+
+.footer a {
+  font-size: 16px; }
 
 @media (min-width: 768px) {
   .hero {
